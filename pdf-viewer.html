@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PDF Viewer</title>
+  <!-- PDF.jsをESモジュールとして読み込む -->
+  <script type="module" src="pdf-viewer.js"></script>
+  <link rel="stylesheet" href="pdf-viewer.css">
+</head>
+<body>
+  <div id="placeholder">
+    <h2>PDF Viewer</h2>
+    <p>Select a PDF reference to preview</p>
+  </div>
+  <div id="loading">Loading PDF...</div>
+  <div id="error"></div>
+  <div id="viewerContainer">
+    <div id="viewer"></div>
+  </div>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div id="loading-text">Loading PDF...</div>
+  </div>
+</body>
+</html>

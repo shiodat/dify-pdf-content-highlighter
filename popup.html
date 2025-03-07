@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Content Highlighter</title>
+  <style>
+    body {
+      width: 600px;
+      height: 600px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .status {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+    }
+    .pdf-container {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    #pdf-viewer {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .pdf-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      background-color: #f5f5f5;
+    }
+    .reference-selector {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    #references {
+      margin-left: 5px;
+      padding: 5px;
+    }
+    .viewer-buttons {
+      display: flex;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>PDF Content Highlighter</h2>
+    <button id="extractBtn">Extract PDF References</button>
+  </div>
+  <div id="status" class="status">Ready</div>
+  <div class="pdf-container">
+    <div class="pdf-controls">
+      <div class="reference-selector">
+        <label for="references">Select PDF:</label>
+        <select id="references">
+          <option value="">-- Select a PDF --</option>
+        </select>
+      </div>
+      <div class="viewer-buttons">
+        <button id="highlightBtn" disabled>Highlight Content</button>
+        <button id="openPdfBtn" disabled>Open in New Tab</button>
+      </div>
+    </div>
+    <iframe id="pdf-viewer" src="pdf-viewer.html"></iframe>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
